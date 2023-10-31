@@ -30,7 +30,7 @@ class TypingTestApp:
         self.words_typed = 0
         self.correct_words = 0
         self.start_time = 0
-        self.duration = 60  # Set the duration of the typing test (in seconds)
+        self.duration = 100  # Set the duration of the typing test (in seconds)
 
     def get_random_word(self):
         return random.choice(words)
@@ -76,7 +76,7 @@ class TypingTestApp:
         self.test_in_progress = False
         self.word_label.config(text="Typing test completed!")
         self.entry.delete(0, 'end')
-        wpm = (self.correct_words / (self.duration / 60)) if self.duration > 0 else 0
+        wpm = (self.correct_words / (self.duration / 100)) if self.duration > 0 else 0
         self.timer_label.config(text=f"Your Words Per Minute (WPM): {wpm:.2f}")
 
 if __name__ == "__main__":
